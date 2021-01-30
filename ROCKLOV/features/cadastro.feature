@@ -19,6 +19,7 @@ Funcionalidade: Cadastro
              Quando submeto o meu cadastro sem o nome
              Então vejo a mensagem de alerta: Oops.Informe seu nome completo!
 
+        @sem_email
         Cenário: Submeter cadastro sem o email
 
             Dado que acesso a página de cadastro
