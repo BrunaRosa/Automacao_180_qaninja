@@ -5,13 +5,14 @@ Funcionalidade: Cadastro
             Quero fazer o meu cadastro no Rocklov
             Para que eu possa disponibilizá-los para locação
 
-        @temp
+        @macgyver
         Cenário: Fazer cadastro
 
             Dado que acesso a página de cadastro
              Quando submeto o meu cadastro completo
              Então sou redirecionado para o Dashboard
 
+        @sem_nome
         Cenário: Submeter cadastro sem o nome
 
             Dado que acesso a página de cadastro
