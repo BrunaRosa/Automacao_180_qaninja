@@ -18,26 +18,34 @@ Funcionalidade: Cadastro
         Cenário: Submeter cadastro sem o nome
 
             Dado que acesso a página de cadastro
-             Quando submeto o meu cadastro sem o nome
+             Quando submeto o seguinte formulário do cadastro
+                  | nome | email                      | senha |
+                  |      | bruninha20_468@hotmail.com | 1234  |
              Então vejo a mensagem de alerta: "Oops. Informe seu nome completo!"
 
         @sem_email
         Cenário: Submeter cadastro sem o email
 
             Dado que acesso a página de cadastro
-             Quando submeto o meu cadastro sem o email
+             Quando submeto o seguinte formulário do cadastro
+                  | nome       | email | senha |
+                  | Bruna Rosa |       | 1234  |
              Então vejo a mensagem de alerta: "Oops. Informe um email válido!"
 
         @email_invalido
         Cenário: Submeter cadastro com o email incorreto
 
             Dado que acesso a página de cadastro
-             Quando submeto o meu cadastro com email incorreto
+             Quando submeto o seguinte formulário do cadastro
+                  | nome       | email                  | senha |
+                  | Bruna Rosa | bruninha20_468@hotmail | 1234  |
              Então vejo a mensagem de alerta: "Oops. Informe um email válido!"
 
         @sem_senha
         Cenário: Submeter cadastro sem a senha
 
             Dado que acesso a página de cadastro
-             Quando submeto o meu cadastro sem a senha
+             Quando submeto o seguinte formulário do cadastro
+                  | nome       | email                      | senha |
+                  | Bruna Rosa | bruninha20_468@hotmail.com |       |
              Então vejo a mensagem de alerta: "Oops. Informe sua senha secreta!"
