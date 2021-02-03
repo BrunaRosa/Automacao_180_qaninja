@@ -1,7 +1,7 @@
 #language:pt
 
 Funcionalidade: Cadastro
-             Sendo um muusico que possui equipamentos musicais
+             Sendo um musico que possui equipamentos musicais
             Quero fazer o meu cadastro no Rocklov
             Para que eu possa disponibilizá-los para locação
 
@@ -14,38 +14,19 @@ Funcionalidade: Cadastro
                   | Bruna Rosa | bruninha20_468@hotmail.com | 1234  |
              Então sou redirecionado para o Dashboard
 
-        @sem_nome
-        Cenário: Submeter cadastro sem o nome
 
-            Dado que acesso a página de cadastro
+          Esquema do Cenário: Tentativa de Cadastro
+
+             Dado que acesso a página de cadastro
              Quando submeto o seguinte formulário do cadastro
-                  | nome | email                      | senha |
-                  |      | bruninha20_468@hotmail.com | 1234  |
-             Então vejo a mensagem de alerta: "Oops. Informe seu nome completo!"
+                  | nome         | email         | senha          |
+                  | <nome_input> | <email_input> | <senha_input>  |
+             Então vejo a mensagem de alerta: "<mensagem_input>"
 
-        @sem_email
-        Cenário: Submeter cadastro sem o email
-
-            Dado que acesso a página de cadastro
-             Quando submeto o seguinte formulário do cadastro
-                  | nome       | email | senha |
-                  | Bruna Rosa |       | 1234  |
-             Então vejo a mensagem de alerta: "Oops. Informe um email válido!"
-
-        @email_invalido
-        Cenário: Submeter cadastro com o email incorreto
-
-            Dado que acesso a página de cadastro
-             Quando submeto o seguinte formulário do cadastro
-                  | nome       | email                  | senha |
-                  | Bruna Rosa | bruninha20_468@hotmail | 1234  |
-             Então vejo a mensagem de alerta: "Oops. Informe um email válido!"
-
-        @sem_senha
-        Cenário: Submeter cadastro sem a senha
-
-            Dado que acesso a página de cadastro
-             Quando submeto o seguinte formulário do cadastro
-                  | nome       | email                      | senha |
-                  | Bruna Rosa | bruninha20_468@hotmail.com |       |
-             Então vejo a mensagem de alerta: "Oops. Informe sua senha secreta!"
+          Exemplos:
+          |nome_input  | email_input              |senha_input| mensagem_input                 |
+          |            |bruninha20_468@hotmail.com|abc1234    |Oops. Informe seu nome completo!|
+          |Bruna Rosa  |                          |abc1234    |Oops. Informe um email válido!  |
+          |Bruna Rosa  |bruna*hotmail.com         |abc1234    |Oops. Informe um email válido!  |
+          |Bruna Rosa  |bruna&hotmail.com         |abc1234    |Oops. Informe um email válido!  |
+          |Bruna Rosa  |bruninha20_468@hotmail.com|           |Oops. Informe sua senha secreta!|
