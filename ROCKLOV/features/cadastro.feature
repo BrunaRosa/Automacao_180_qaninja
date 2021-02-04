@@ -11,22 +11,22 @@ Funcionalidade: Cadastro
             Dado que acesso a página de cadastro
           Quando submeto o seguinte formulário do cadastro
                | nome       | email                      | senha |
-               | Bruna Rosa | bruninha20_468@hotmail.com | 1234  |
+               | Bruna Rosa | bruninha40_468@hotmail.com | 1234  |
            Então sou redirecionado para o Dashboard
 
-
+     @cadastro
      Esquema do Cenário: Tentativa de Cadastro
 
             Dado que acesso a página de cadastro
           Quando submeto o seguinte formulário do cadastro
                | nome         | email         | senha         |
                | <nome_input> | <email_input> | <senha_input> |
-           Então vejo a mensagem de alerta: "<mensagem_input>"
+           Então vejo a mensagem de alerta: "<mensagem_output>"
 
           Exemplos:
-               | nome_input | email_input                | senha_input | mensagem_input                   |
-               |            | bruninha20_468@hotmail.com | abc1234     | Oops. Informe seu nome completo! |
+               | nome_input | email_input                | senha_input | mensagem_output                  |
+               |            | bruninha40_468@hotmail.com | abc1234     | Oops. Informe seu nome completo! |
                | Bruna Rosa |                            | abc1234     | Oops. Informe um email válido!   |
                | Bruna Rosa | bruna*hotmail.com          | abc1234     | Oops. Informe um email válido!   |
                | Bruna Rosa | bruna&hotmail.com          | abc1234     | Oops. Informe um email válido!   |
-               | Bruna Rosa | bruninha20_468@hotmail.com |             | Oops. Informe sua senha secreta! |
+               | Bruna Rosa | bruninha40_468@hotmail.com |             | Oops. Informe sua senha secreta! |
