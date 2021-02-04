@@ -7,6 +7,7 @@ Funcionalidade: Cadastro de Anúncios
 
     Cenário: Novo equipamento
         Dado que eu tenho o seguinte equipamento
+            |thumb      | fender-sb.jpg |
             |nome       | Fender Strato |
             |categoria  | Cordas        |
             |preco      | 200           |
